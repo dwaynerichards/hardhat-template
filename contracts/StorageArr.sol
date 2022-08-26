@@ -14,7 +14,7 @@ contract StorageArr {
         _;
     }
 
-    function removeIndex(uint256 index) public inBounds(index) returns (uint256 length) {
+    function removeIndex(uint256 index) public inBounds(index) returns (uint256) {
         //copy into memory
         uint256[] memory _nums = nums;
         //swamp indices down until end of arr
@@ -24,7 +24,6 @@ contract StorageArr {
         }
         _nums = nums;
         nums.pop();
-        length = _nums.length;
-        console.log(length);
+        return _nums.length;
     }
 }
